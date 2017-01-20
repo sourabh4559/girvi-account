@@ -1,0 +1,289 @@
+﻿@import "../../core/stylesheets/bootstrap/_variables.scss";
+//
+// Define all the global variables here
+// Language Collection
+$languageCollection: "en", "fr", "es";
+// Fonts
+// -------------------------------------
+// open sans font files
+$file-ttf-font-open-sans-bold: url('../fonts/OpenSans-Bold.ttf');
+$file-woff-font-open-sans-bold: url('../fonts/OpenSans-Bold.woff');
+$file-ttf-font-open-sans-bold-italic: url('../fonts/OpenSans-BoldItalic.ttf');
+$file-woff-font-open-sans-bold-italic: url('../fonts/OpenSans-BoldItalic.woff');
+$file-ttf-font-open-sans-extra-bold: url('../fonts/OpenSans-ExtraBold.ttf');
+$file-woff-font-open-sans-extra-bold: url('../fonts/OpenSans-ExtraBold.woff');
+$file-ttf-font-open-sans-extra-bold-italic: url('../fonts/OpenSans-ExtraBoldItalic.ttf');
+$file-woff-font-open-sans-extra-bold-italic: url('../fonts/OpenSans-ExtraBoldItalic.woff');
+$file-ttf-font-open-sans-italic: url('../fonts/OpenSans-Italic.ttf');
+$file-woff-font-open-sans-italic: url('../fonts/OpenSans-Italic.woff');
+$file-ttf-font-open-sans-light: url('../fonts/OpenSans-Light.ttf');
+$file-woff-font-open-sans-light: url('../fonts/OpenSans-Light.woff');
+$file-ttf-font-open-sans-light-italic: url('../fonts/OpenSans-LightItalic.ttf');
+$file-woff-font-open-sans-light-italic: url('../fonts/OpenSans-LightItalic.woff');
+$file-ttf-font-open-sans-regular: url('../fonts/OpenSans-Regular.ttf');
+$file-woff-font-open-sans-regular: url('../fonts/OpenSans-Regular.woff');
+$file-ttf-font-open-sans-semibold: url('../fonts/OpenSans-Semibold.ttf');
+$file-woff-font-open-sans-semibold: url('../fonts/OpenSans-Semibold.woff');
+$file-ttf-font-open-sans-semibold-italic: url('../fonts/OpenSans-SemiboldItalic.ttf');
+$file-woff-font-open-sans-semibold-italic: url('../fonts/OpenSans-SemiboldItalic.woff');
+$font-size-very-small-2: $font-size-base - 7px;
+$font-size-very-small-1: $font-size-base - 6px;
+$font-size-very-small: $font-size-base - 5px;
+$font-size-small: $font-size-base - 3px;
+$font-size-small-1: $font-size-base - 2px;
+$font-size-small-2: $font-size-base - 1px;
+$font-size-normal: $font-size-base - 4px;
+$font-size-medium: $font-size-base;
+$font-size-medium-1: $font-size-base + 1px;
+$font-size-medium-2: $font-size-base + 2px;
+$font-size-medium-3: $font-size-base + 3px;
+$font-size-large: $font-size-base + 4px;
+$font-size-large-1: $font-size-base + 5px;
+$font-size-large-2: $font-size-base + 6px;
+$font-size-large-3: $font-size-base + 7px;
+$font-size-large-4: $font-size-base + 8px;
+$font-size-large-5: $font-size-base + 10px;
+$font-size-large-6: $font-size-base + 10px;
+$font-size-large-7: $font-size-base + 11px;
+$font-size-very-large: $font-size-base + 12px;
+$font-size-very-large-1: $font-size-base + 13px;
+$font-size-very-large-2: $font-size-base + 14px;
+$font-size-very-large-3: $font-size-base + 15px;
+$font-size-extra-large: $font-size-base + 24px;
+
+//font-size for loader
+$font-size-big-loader: 64px;
+// base font weights 
+$font-weight-ultralight: 100;
+$font-weight-light: 200;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-black: 800;
+// base font family
+$font-family-base: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", open sans, sans-serif;
+$font-family-base-bold: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue", open sans, sans-serif;
+$font-family-base-medium: "Helvetica Neue Medium", "Helvetica Neue", open sans, sans-serif;
+$font-family-courier: "courier new", "courier";
+//colors
+$color-timeclock-section-separator: rgba(49, 182, 231, 1);
+$color-timeclock-text-disabled: rgba(245, 245, 245, 0);
+$color-line-separator: rgb(204, 204, 204);
+//loader
+$color-loader-background: rgba(0, 0, 0, 1);
+$color-loader-text: rgba(105, 113, 125, 1);
+$color-loader-keyframe-background: rgba(105, 113, 125, 1);
+$color-loader-keyframe-background-splash: rgba(255, 255, 255, 1);
+$font-size-loader-text: $font-size-base + 50px;
+//overlay
+$color-fade-in-background: rgba(0, 0, 0, 0.9);
+//flash overlay
+$color-flash-overlay-tooltip-outer-glow: rgba(0, 0, 0, 0.60);
+$color-flash-overlay-tooltip-arrow-outer-glow: rgba(0, 0, 0, 0.35);
+//3x retina suffix 
+$retina-3x-suffix: '_3x';
+//2x retina suffix
+$retina-2x-suffix: '_2x';
+//default image path
+$default-image-path:'../images/';
+$default-svg-image-path:'../images/svg-images/';
+$default-svg-sprite-path:'../images/svg-sprites/';
+$default-gif-image-path: '../images/animations/';
+//common sprite details
+$sprite-common-name: 'sprite_common-v0.5';
+// 2x sprite image details
+$sprite-2x-width:275px;
+$sprite-2x-height:150px;
+// 3x sprite image details
+$sprite-3x-width:275px;
+$sprite-3x-height:150px;
+// Border Color Variables
+$color-primary-border: rgba(188, 190, 192, 1);
+$color-error-border: rgba(216, 65, 65, 1);
+$color-setup-btn: rgba(255, 255, 255, 1);
+$color-btn-border: rgba(28, 117, 188, 1);
+$color-error-btn-border: rgba(216, 65, 65, 1);
+$color-flash-filled: rgba(28, 117, 188, 0.15);
+$color-bacnet-input-border: rgba(230, 231, 232, 1);
+// font Color Variables
+$color-primary-text: rgba(66, 66, 66, 1);
+$color-primary-text-opaque: rgba(66, 66, 66, .35);
+$color-secondary-text: rgba(146, 148, 151, 1);
+$color-primary-link: rgba(28, 117, 188, 1);
+$color-error-text: rgba(216, 65, 65, 1);
+$color-disable-link: rgba(146, 148, 151, 1);
+$color-disabled-button-text: rgba(146, 148, 151, 1);
+$color-primary-mobiscroll: rgba(255, 255, 255, 1);
+$color-fixture-count: rgb(255, 255, 255);
+$color-success-text: rgba(0, 255, 0, 1);
+$color-primary-remove-links: rgba(215, 2, 32, 1);
+$color-occupancy-teal: rgba(61, 126, 138, 1);
+$color-weak-password: rgba(216, 65, 65, 1);
+$color-medium-password: rgba(248, 148, 6, 1);
+$color-strong-password: rgba(54, 204, 140, 1);
+$color-active-state: rgba(238, 42, 123, 1);
+$color-energy-saving: rgba(121, 154, 5, 1);
+$color-warning-text: rgba(255, 165, 0, 1);
+$color-fixture-added-text: rgba(42,204,137,1);
+//PICO selection font color
+$color-focus-font: rgba(255, 255, 255, 1);
+//toggle color variables
+$color-toggle-active-background: rgba(28, 117, 188, 1);
+$color-toggle-disable-background: rgba(255, 255, 255, 1);
+$color-toggle-nob-background: rgba(255, 255, 255, 1);
+$color-toggle-disable-border: rgba(229, 229, 229, 1);
+// button Color Variables
+$color-disabled-button-text: rgba(146, 148, 151, 1);
+$color-primary-button-text: rgba(255, 255, 255, 1);
+// modal color Variables 
+$color-modal-primary-button-text: rgba(0, 122, 255, 1);
+$color-modal-backdrop-background: rgba(0, 0, 0, 0.9);
+$color-modal-content-background: rgba(255, 255, 255, 1);
+$color-modal-box-shadow: rgba(0, 0, 0, 0);
+$color-guided-tooltip-text: rgba(255, 255, 255, 1);
+$color-guided-tooltip-background: rgba(28, 117, 188, 1);
+$color-guided-tooltip-outer-glow: rgba(0, 0, 0, 0.35);
+$color-dashboard-tiles-disabled-background:rgba(0, 0, 0, 0.9);
+$color-flash-tooltip-error-outer-glow: rgba(222, 222, 222, 1);
+// Background Color Variables
+$color-header-background:rgba(255, 255, 255, 1);
+$color-primary-background:rgba(255, 255, 255, 1);
+$color-body-background:rgba(241, 241, 241, 1);
+$color-row-active-background: rgba(28, 117, 188, 0.1);
+$color-primary-button: rgba(28, 117, 188, 1);
+$color-primary-button-disable: rgba(28, 117, 188, 0.35);
+$color-disabled-button-background: rgba(209, 210, 211, 1);
+$color-event-schedule-background: rgba(210, 232, 247, 1);
+$color-dashboard-title: rgba(255, 255, 255, 1);
+$color-disabled-background: rgba(0, 0, 0, 1);
+$flash-error-background: rgba(216, 65, 65, 0.1);
+$color-add-device-error-background:rgba(255, 255, 255, 0.9);
+$color-carousel-indicators-active-background: rgba(255, 255, 255, 1);
+$color-carousel-indicators-background: rgba(255, 255, 255, 0.35);
+$color-setup-screen-background: rgba(28, 117, 188, 1);
+$color-flash-error-background: rgba(252, 232, 232, 0.95);
+$color-energy-saving-background: rgba(148, 181, 61, 1);
+$color-energy-using-background: rgba(241, 241, 241, 1);
+$color-layover-main-background:rgba(255, 255, 255, 1);
+$color-linear-gradient-background-start: rgba(28, 117, 188, 1);
+$color-linear-gradient-background-end: rgba(92, 167, 214, 1);
+$color-event-disable-background: rgba(0, 0, 0, 0.1);
+//Dashboard header gradient
+$color-linear-gradient-dashboard-header-start: rgba(0, 0, 0, .35);
+$color-linear-gradient-dashboard-header-end: rgba(0, 0, 0, 0);
+//label gradient
+$color-label-gradient-start: rgba(252, 255, 244, 1);
+$color-label-gradient-end: rgba(179, 190, 173, 1);
+//guideline help popover
+$color-popover-box-shadow: rgba(76, 76, 76, .15);
+//pico whand
+$icon-device-pico-3buttonraiselower-whand: 'device-pico-3buttonraiselower-whand-v0.5';
+$icon-device-pico-2buttonraiselower-whand: 'device-pico-2buttonraiselower-whand-v0.5';
+$icon-device-pico-2button-whand: 'device-pico-2button-whand-v0.5';
+$icon-device-pico-3button-whand: 'device-pico-3button-whand-v0.5';
+$icon-device-pico-4button-whand: 'device-pico-keypad-whand-v0.5';
+//occupancy sensor whand
+$device-occupancy-sensor-ceilingmount-whand: 'device-occupancy-sensor-whand-v0.5';
+$device-occupancy-sensor-wallmount-whand: 'device-occsensor-wallmount-2B-whand-v0.5';
+//daylight sensor whand
+$device-daylight-sensor-whand: 'device-daylight-sensor-whand-v0.5';
+//powpak whand
+$device-powpak-cco-whand: 'product-occsensor-powpak-cco-whand-v0.6';
+$device-powpak-whand: 'product-occsensor-powpak-whand-v0.6';
+//product dimmer whand
+$product-dimmer-whand: 'product-dimmer-whand-v0.5';
+//product switch whand
+$product-switch-whand: 'product-switch-whand-v0.5';
+//occupancy sensor icon
+$icon-occupancy-sensor: 'device-occupancy-sensor-v0.5';
+$color-pico-device-font: rgba(255, 206, 87, 1);
+$color-wall-mount-text: rgba(255, 255, 255, 0.5);
+//Progress bar 
+$color-progress-background: rgba(230, 231, 232, 1);
+$color-progress-bar: rgba(51, 122, 183, 1);
+//spinner
+$color-spinner-fade: rgba(105, 113, 125, 1);
+//occupancy info 
+$image-device-occupancy-info: 'occupancy-info-v0.5';
+$icon-occupancy-highactivity: 'occmodal-icon-highactivity-v0.5';
+$icon-occupancy-lowactivity: 'occmodal-icon-lowactivity-v0.5';
+$icon-occupancy-medactivity: 'occmodal-icon-medactivity-v0.5';
+//Device SVG images
+$svg-occupancy-ceiling-sensor: 'product_occsensor_ceilingmount';
+$svg-occupancy-wall-ceilingmount-sensor: 'product_occsensor_wall-ceilingmount';
+$svg-occupancy-vacancy-wall-sensor: 'product_occsensor_wallmount';
+$svg-daylight-sensor: 'product_daylightsensor';
+$svg-pico-2button: 'product_pico_2B';
+$svg-pico-3button: 'product_pico_3B';
+$svg-pico-4button: 'product_pico_4B';
+$svg-pico-5button: 'product_pico_5B';
+$svg-pico-keypad: 'product_pico_keypad';
+$svg-powpak-cco: 'product_powpak4-v1.0';
+$svg-powpak-3button: 'product_powpak3-v1.0';
+$svg-dimmer: 'product_dimmer';
+$svg-switch: 'product_switch';
+$svg-powpak-with-sensor: 'product_powpak_with_sensor-v1.0';
+$svg-powpak-with-receptacle-icon: 'powpak_2b_receptacle';
+$svg-powpak-with-cco-icon: 'powpak_2b_cco';
+// Programming info
+$svg-pico-5button-info: 'info-img-pico-5B-v0.5';
+$svg-pico-3button-info: 'info-img-pico-3B-v0.5';
+$svg-pico-keypad-info: 'info-img-pico-keypad-v0.5';
+// Device help popup images   
+$image-pico-move-instruction1: 'pico_move_instruction1-v0.5';
+$image-pico-move-instruction2: 'pico_move_instruction2-v0.5';
+$image-occ-sensor-move-instruction: 'occ_sensor_move_instruction-v0.5';
+$image-daylight-sensor-move-instruction: 'daylight_sensor_move_instruction-v0.5';
+//Pico Programming button blue images
+$svg-pico-5B-blue-favorite: 'product_pico_5B_blue3';
+$svg-pico-3B-blue-favorite: 'product_pico_3B_blue2';
+$svg-pico-keypad-blue-button1: 'product_pico_keypad_blue1';
+$svg-pico-keypad-blue-button2: 'product_pico_keypad_blue2';
+$svg-pico-keypad-blue-button3: 'product_pico_keypad_blue3';
+//hubbell receptacle
+$svg-hubbell-receptacle: 'product_hubbell_receptacle-v2.0';
+$product-hubbell-receptacle-whand: 'product-hubbell-receptacle-whand-v1.0';
+//Tuning Help popup images
+$svg-tuning-info: 'tuning_info_image-v0.6';
+//Area help popup images
+$area-floor-plan: 'area_floorplan-v1.1';
+$area-open-office: 'area_open_office-v1.2';
+// FAQs images
+$svg-fixture-sensor-wiring: 'fixture_sensor_wiring-v0.5';
+$svg-third-party-wiring: 'third_party_wiring-v0.5';
+$svg-hub-reset-password: 'hub_reset_password';
+//Sensor confirm popup border
+$color-confirm-popup-border: rgba(209, 210, 211, 1);
+//initial setup wifi image
+$image-wifi-android: 'wifi_android-v0.5';
+$image-wifi-ios: 'wifi_ios-v0.5';
+//setup intro images
+$setup_intro_screen1: 'setup_intro_screen1-v1.0';
+$setup_intro_screen2: 'setup_intro_screen2-v1.0';
+$setup_intro_screen3: 'setup_intro_screen3-v2.0';
+$setup_intro_screen4: 'setup_intro_screen4-v1.0';
+//Assign fixtures row background on flash
+$color-flash-row-background: rgba(28, 117, 188, 0.1);
+//hub networking
+$hub-not-reachable-background: rgba(255, 218, 185, 0.8);
+$hub-new-text: rgba(255, 179, 102, 0.8);
+$svg-hub-icon: 'hub_icon-v1.0';
+$svg-search-icon: 'universal_icon_search';
+// Lutron logo
+$svg-lutron-logo-gray: 'lutron_logo_gray-v1.0';
+$svg-lutron-logo-white: 'lutron_logo_white-v1.0';
+$svg-software-update: 'software_update-v0.5';
+//daylight calibration images
+$svg-calibration-cup: 'calibration_cup-v1.0';
+$svg-calibration-flashlight: 'calibration_flashlight-v1.0';
+$svg-calibration-tools: 'calibration_tools-v1.0';
+$svg-calibration-pico-dimmer: 'calibration_pico_dimmer-v1.0';
+$image-calibration-sensor: 'calibration_sensor-v1.0';
+$image-calibration-count: 'calibration_count-v1.0';
+//load shed help image
+$svg-load-shed-switch-help: 'loadshed_wiring-v1.0';
+$image-vive-logo-splash:'vive_logo_white-v1.0';
+//occupancy grouping help images
+$image-occupancy-grouping: 'occupancy_grouping-v1.0';
+$image-occupancy-no-grouping: 'occupancy_no_grouping-v1.0';

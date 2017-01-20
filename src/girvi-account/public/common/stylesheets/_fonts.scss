@@ -1,0 +1,22 @@
+// font weight ranges
+// 100    Extra Light or Ultra Light
+// 200    Light or Thin
+// 300    Book or Demi
+// 400    Normal or Regular
+// 500    Medium
+// 600    Semibold, Demibold
+// 700    Bold
+// 800    Black, Extra Bold or Heavy
+// 900    Extra Black, Fat, Poster or Ultra Black
+
+// font-face for open sans font
+@include font-face('Open Sans', $file-woff-font-open-sans-bold, $file-ttf-font-open-sans-bold, 700);
+@include font-face('Open Sans', $file-woff-font-open-sans-bold-italic, $file-ttf-font-open-sans-bold-italic, 700, italic);
+@include font-face('Open Sans', $file-woff-font-open-sans-extra-bold, $file-ttf-font-open-sans-extra-bold, 800);
+@include font-face('Open Sans', $file-woff-font-open-sans-extra-bold-italic, $file-ttf-font-open-sans-extra-bold-italic, 800, italic);
+@include font-face('Open Sans', $file-woff-font-open-sans-italic, $file-ttf-font-open-sans-italic, 400, italic);
+@include font-face('Open Sans', $file-woff-font-open-sans-light, $file-ttf-font-open-sans-light, 200);
+@include font-face('Open Sans', $file-woff-font-open-sans-light-italic, $file-ttf-font-open-sans-light-italic, 200, italic);
+@include font-face('Open Sans', $file-woff-font-open-sans-regular, $file-ttf-font-open-sans-regular);
+@include font-face('Open Sans', $file-woff-font-open-sans-semibold, $file-ttf-font-open-sans-semibold, 600);
+@include font-face('Open Sans', $file-woff-font-open-sans-semibold-italic, $file-ttf-font-open-sans-semibold-italic, 600, italic);

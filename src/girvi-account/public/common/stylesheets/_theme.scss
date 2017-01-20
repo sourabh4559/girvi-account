@@ -1,0 +1,97 @@
+/* Rows Start */
+
+.row-text{
+  width: 100%;
+  float: left;
+  position: relative;
+  height: 44px; 
+  line-height:43px;
+}
+
+.row-item {
+  height:60px;
+}
+
+.row-icon-text {
+    width: 100%;
+    float: left;
+    position: relative;
+    height: 60px;
+    line-height: 60px;
+}
+
+.row-icon-sub-text {
+    width: 100%;
+    float: left;
+    position: relative;
+    height: 87px;
+}
+
+.row-icon-long-sub-text {
+    width: 100%;
+    float: left;
+    position: relative;
+    height: 117px;
+}
+
+.row-content {
+    width: 100%;
+    float: left;
+    position: relative;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.row-item-text {
+    width: 100%;
+    height: 80px;
+    float:  left;
+}
+
+
+@media screen and (max-width: 375px) {
+    .minimum-content-row{
+        width: 100%;
+        height: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .minimum-content-margin{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .fixture-list-item {
+        .row-content-height {
+          height: 100px;
+        }
+    }
+}
+
+.min-row-icon-text {
+  min-height:40px;   
+}
+
+.min-row-icon-sub-text {
+  min-height: 67px;
+}
+
+/* Rows End */
+
+.row-content-container {
+  display: table;
+  height: 100%;
+  table-layout: fixed;
+}
+.row-content-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+
+/********Buttons Classes********/
+.btn-primary{
+  height: 44px;
+  width: 165px;
+}
+

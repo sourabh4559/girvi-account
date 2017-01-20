@@ -1,0 +1,62 @@
+html {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    color: $color-primary-text;
+    font-size: $font-size-base;
+    background: $color-body-background;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.fixed-div {
+    position: fixed;
+    top: -1px;
+    height: 1px;
+    width: 100%;
+    background: $color-primary-background;
+}
+
+body, input, button, select, option, textarea {
+    font-family: $font-family-base;
+}
+
+#main {
+    position: relative;
+    min-height: 100%;
+    cursor: default;
+}
+
+.content-container {
+    overflow-x:hidden;
+    position: relative;
+    .content-wrapper {
+        width: 100%;
+        display: table;
+        .contentholder {
+            z-index: 11;
+            float: left;
+            background: transparent;
+        }
+    }
+}
+
+#layover-container {
+    background-color: $color-body-background;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    z-index: 1030;
+    height: 100%;
+}
+
