@@ -38,6 +38,16 @@ var utils = {
     scrollWithoutAnimation(position) {
         $('body').scrollTop(position);
     },
+
+    createUrl: function(baseUrl) {
+        var encodedUrl = baseUrl;
+        if (arguments.length > 1) {
+            for (var i = 1; i <= arguments.length - 1; i++) {
+                encodedUrl = encodedUrl.concat("/").concat(encodeURIComponent(arguments[i]));
+            }
+        }
+        return encodedUrl;
+    }
 };
 
 export default utils;

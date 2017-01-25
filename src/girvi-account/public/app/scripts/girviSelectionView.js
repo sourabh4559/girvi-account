@@ -9,6 +9,12 @@ class GirviSelectionView extends ViewBase {
         return 'fn-girvi-selection';
     }
 
+    events() {
+        return {
+            "change #fn-village-selector": "onVillageSelectionChange"
+        };
+    }
+
     initialize() {
         this.template = this.getTemplate(templates, '_girviSelectionPartial');
         this.villageList = this.options.villageList;
@@ -21,14 +27,18 @@ class GirviSelectionView extends ViewBase {
     }
 
     afterRender() {
-        console.log(this.villageList);
-        // Sample Code - Rendering Girvi List View
-        this.showGirviListView("-KaWtkZ8l3rgAO4wQoqG");
-        // Sample Code - Updating Girvi List View
-        window.setTimeout(() => {
-            this.updateGirviListForVillage("-KaWtsjV2nKLlzWOFzGk");
-        }, 2000);
+        var selectedVillageKey = this.$('#fn-village-selector').val();
+        this.showGirviListView(selectedVillageKey);
     }
+
+    // -------------- Event Handlers > Start --------------------------
+
+    onVillageSelectionChange(event) {
+        var selectedVillageKey = $(event.target).val();
+        this.updateGirviListForVillage(selectedVillageKey);
+    }
+
+    // -------------- Event Handlers > End ----------------------------
 
     showGirviListView(villageKey) {
         this.fetchVillageGirviList(villageKey)

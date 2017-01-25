@@ -14,10 +14,9 @@ class GirviListView extends ViewBase {
     }
 
     afterRender() {
-        console.log(this.girviList);
-        // Render all girvi items
-        this.renderGirviListItemView();
-        this.renderGirviListItemView();
+        _.each(this.girviList, (girviItem) => {
+            this.renderGirviListItemView(girviItem);
+        });
     }
 
     renderGirviListItemView(girviItem) {

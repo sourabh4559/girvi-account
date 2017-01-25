@@ -1,10 +1,17 @@
 import ViewBase from '../common/viewBase';
 import templates from '../../templates/app-templates';
+import utils from '../common/utils';
 
 class GirviListItemView extends ViewBase {
 
     className() {
         return ".fn-girvi-list-item";
+    }
+
+    events() {
+        return {
+            "click": "onItemClick"
+        };
     }
 
     initialize() {
@@ -14,13 +21,18 @@ class GirviListItemView extends ViewBase {
 
     serialize() {
         return {
-            girviItem: this.girviItem
+            item: this.girviItem
         };
     }
 
-    afterRender() {
+    // -------------------- Event Handlers > Start ----------------------
 
+    onItemClick(event) {
+        var girviKey = this.$('.girvi-item').attr('data-key');
+        Backbone.history.navigate(utils.createUrl("/girvi", girviKey), {trigger: true});
     }
+
+    // -------------------- Event Handlers > End ------------------------
 
 }
 

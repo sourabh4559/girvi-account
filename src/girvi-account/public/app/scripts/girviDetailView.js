@@ -15,9 +15,13 @@ class GirviDetailView extends ViewBase {
         this.girviData = this.options.girviData;
     }
 
+    serialize() {
+        return {
+            item: this.girviData
+        };
+    }
+
     afterRender() {
-        this.showContainerInfo("-KaWwFFD70MPOt7dcUZd");
-        this.showActivityInfo("-KaWwFFD70MPOt7dcUZd");
     }
 
     // ------------------- Container Info View > Start ----------------------------

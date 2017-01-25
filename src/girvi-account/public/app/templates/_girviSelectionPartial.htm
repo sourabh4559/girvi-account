@@ -1,2 +1,8 @@
-<span>Girvi Selection View</span>
+<div>
+    <select id='fn-village-selector'>
+        {{#each villageList}}
+            <option value={{@key}}>{{name}}</option>
+        {{/each}}
+    </select>
+<div>
 <div class="fn-girvi-list-container"></div>
