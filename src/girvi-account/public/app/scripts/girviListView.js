@@ -13,6 +13,12 @@ class GirviListView extends ViewBase {
         this.girviList = this.options.girviList;
     }
 
+    serialize() {
+        return {
+            searchGirviWatermark: "Search Girvi"
+        };
+    }
+
     afterRender() {
         _.each(this.girviList, (girviItem) => {
             this.renderGirviListItemView(girviItem);

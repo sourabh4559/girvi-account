@@ -1,0 +1,23 @@
+<header>
+    <nav class="nav-header nav-fixed-top">
+        {{#if leftLinkText}}
+        <div class="text-left header-first-col pull-left header-link " id="secondary-btn">
+            {{leftLinkText}}
+        </div>
+        {{else}}
+        <div class="header-first-col"></div>
+        {{/if}}
+        <div class="navbar-heading header-middle-col">
+            <div class="navbar-heading-container show-ellipsis">
+                <span class="page-title">{{headerTitle}}</span>
+            </div>
+        </div>
+        {{#if rightLinkText}}
+        <div class="text-right header-last-col header-link" id="primary-btn">
+            {{rightLinkText}}
+        </div>
+        {{else}}
+        <div class="header-last-col"></div>
+        {{/if}}
+    </nav>
+</header>
