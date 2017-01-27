@@ -3,6 +3,7 @@ import templates from '../../templates/app-templates';
 import * as firebase from 'firebase';
 import commonTemplates from '../../templates/common-templates';
 import GirviListView from './girviListView';
+import utils from '../common/utils';
 
 class GirviSelectionView extends ViewBase {
 
@@ -14,7 +15,8 @@ class GirviSelectionView extends ViewBase {
         return {
             "click .fn-village": "onVillageSelection",
             "keyup #search-village-textbox": "showVillageList",
-            "keypress #search-village-textbox": "showVillageList"
+            "keypress #search-village-textbox": "showVillageList",
+            "click #primary-btn": "addGirvi"
         };
     }
 
@@ -27,7 +29,7 @@ class GirviSelectionView extends ViewBase {
     serialize() {
         return {
             headerTitle: "Girvi List",
-            rightLinkText: '+',
+            rightLinkText: 'Add',
             villageList: this.villageList,
             searchVillageWatermark: "Search Girvi Village"
         };
@@ -97,6 +99,12 @@ class GirviSelectionView extends ViewBase {
 
     hideVillageList() {
         this.$(".fn-villages-datalist-container .village-item").hideElement();
+    }
+
+    addGirvi() {
+        Backbone.history.navigate(utils.createUrl("/addgirvi"), {
+            trigger: true
+        });
     }
 
 }

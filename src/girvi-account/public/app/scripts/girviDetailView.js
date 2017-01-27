@@ -1,5 +1,6 @@
 import ViewBase from '../common/viewBase';
 import templates from '../../templates/app-templates';
+import commonTemplates from '../../templates/common-templates';
 import ContainerInfoView from './containerInfoView';
 import ActivityInfoView from './activityInfoView';
 import * as firebase from 'firebase';
@@ -11,17 +12,31 @@ class GirviDetailView extends ViewBase {
     }
 
     initialize() {
+        this.headerTemplate = this.getTemplate(commonTemplates, '_headerLinkTitleAndLink');
         this.template = this.getTemplate(templates, "_girviDetailPartial");
         this.girviData = this.options.girviData;
     }
 
-    serialize() {
+    events() {
         return {
-            item: this.girviData
+            "click #secondary-btn": "onBackClick"
         };
     }
 
-    afterRender() {
+    serialize() {
+        return {
+            item: this.girviData,
+            headerTitle: "Girvi Detail",
+            leftLinkText: "Back"
+        };
+    }
+
+    afterRender() {}
+
+    onBackClick() {
+        Backbone.history.navigate("", {
+            trigger: true
+        });
     }
 
     // ------------------- Container Info View > Start ----------------------------
@@ -36,7 +51,7 @@ class GirviDetailView extends ViewBase {
     fetchContainerInfoData(girviKey) {
         const rootRef = firebase.database().ref();
         const girviObjectsRef = rootRef.child('girviObjects');
-        var handler = function (resolve, reject) {
+        var handler = function(resolve, reject) {
             girviObjectsRef.child('containerInfo').child(girviKey).once('value', function(snap) {
                 resolve(snap.val());
             });
@@ -65,7 +80,7 @@ class GirviDetailView extends ViewBase {
     fetchActivityInfoData(girviKey) {
         const rootRef = firebase.database().ref();
         const girviObjectsRef = rootRef.child('girviObjects');
-        var handler = function (resolve, reject) {
+        var handler = function(resolve, reject) {
             girviObjectsRef.child('activityInfo').child(girviKey).once('value', function(snap) {
                 resolve(snap.val());
             });

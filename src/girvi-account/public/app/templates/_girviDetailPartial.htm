@@ -1,15 +1,48 @@
-<a href="#">Back</a>
+<div class="space-container"></div>
 <div class="girvi-detail">
-    <div class="client-info">
-        <span>Name : {{item.name}}</span>
-        <span>FatherName : {{item.fatherName}}</span>
-        <span>Sex : {{item.sex}}</span>
+    <div class="col-xs-12 name-section left-spacing right-spacing normal-row-item text-center">
+        Client Personal Info
     </div>
-    <div class="girvi-info">
-        <span>Amount : {{item.amount}}</span>
-        <span>Start Date : {{item.startDate}}</span>
+    <div class="line-separator">
+        <div class="line-separator-content"></div>
+    </div>
+    <div class="client-info sub-section">
+        <div class="col-xs-12 name-section left-spacing right-spacing normal-row-item">
+            <div class="col-xs-6 no-padding text-right right-spacing">Name :</div>
+            <div class="col-xs-6 no-padding">{{item.name}}</div>
+        </div>
+        <div class="col-xs-12 father-name-section left-spacing right-spacing normal-row-item">
+            <div class="col-xs-6 no-padding text-right right-spacing">FatherName :</div>
+            <div class="col-xs-6 no-padding">{{item.fatherName}}</div>
+        </div>
+        <div class="col-xs-12 gender-section left-spacing right-spacing normal-row-item">
+            <div class="col-xs-6 no-padding text-right right-spacing">Sex :</div>
+            <div class="col-xs-6 no-padding">{{item.sex}}</div>
+        </div>
+    </div>
+    <div class="line-separator">
+        <div class="line-separator-content"></div>
+    </div>
+    <div class="component-space-container"></div>
+    <div class="col-xs-12 name-section left-spacing right-spacing normal-row-item text-center">
+        Client Girvi Info
+    </div>
+    <div class="line-separator">
+        <div class="line-separator-content"></div>
+    </div>
+    <div class="girvi-info sub-section">
+        <div class="col-xs-12 amount-section left-spacing right-spacing normal-row-item">
+            <div class="col-xs-6 no-padding text-right right-spacing">Amount :</div>
+            <div class="col-xs-6 no-padding">{{item.amount}}</div>
+        </div>
+        <div class="col-xs-12 date-section left-spacing right-spacing normal-row-item">
+            <div class="col-xs-6 no-padding text-right right-spacing">Start Date :</div>
+            <div class="col-xs-6 no-padding">{{item.startDate}}</div>
+        </div>
+    </div>
+    <div class="line-separator">
+        <div class="line-separator-content"></div>
     </div>
 </div>
-
 <div class='fn-containerInfo-container'></div>
 <div class='fn-activityInfo-container'></div>

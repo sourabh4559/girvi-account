@@ -1,5 +1,6 @@
 import ViewBase from '../common/viewBase';
 import templates from '../../templates/app-templates';
+import commonTemplates from '../../templates/common-templates';
 import * as firebase from 'firebase';
 
 class AddGirviView extends ViewBase {
@@ -10,32 +11,42 @@ class AddGirviView extends ViewBase {
 
     events() {
         return {
-            "click #btn-add-girvi": "onAddGirviBtnClick"
+            "click #btn-add-girvi": "onAddGirviBtnClick",
+            "click #secondary-btn": "onBackClick"
         };
     }
 
     initialize() {
+        this.headerTemplate = this.getTemplate(commonTemplates, '_headerLinkTitleAndLink');
         this.template = this.getTemplate(templates, '_addGirviPartial');
         this.villageList = this.options.villageList;
     }
 
     serialize() {
         return {
-            villageList: this.villageList
+            villageList: this.villageList,
+            headerTitle: "Add Girvi",
+            leftLinkText: "Back"
         };
+    }
+
+    onBackClick() {
+        Backbone.history.navigate("", {
+            trigger: true
+        });
     }
 
     // ------------------ Event Handlers > Start ----------------------
 
     onAddGirviBtnClick(event) {
         event.preventDefault();
-        
+
         var girviKey;
         var girviName = this.$('input[name="name"]').val();
         var girviAmt = this.$('input[name="amount"]').val();
         var girviStartDate = this.$('input[name="startDate"]').val();
         var villageKey = this.$('#fn-village-selector').val();
-        
+
         const rootRef = firebase.database().ref();
         const girvisRef = rootRef.child("girvis");
         var newGirviRef = girvisRef.push({
@@ -57,7 +68,9 @@ class AddGirviView extends ViewBase {
                     if (error) {
                         console.log(error);
                     } else {
-                        Backbone.history.navigate("/", {trigger: true});
+                        Backbone.history.navigate("/", {
+                            trigger: true
+                        });
                     }
                 });
             }
