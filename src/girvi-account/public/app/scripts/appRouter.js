@@ -8,7 +8,7 @@ class AppRouter extends Backbone.Router {
         return {
             "": "index",
             "girvi/:girviKey": "showGirviDetailPage",
-            "addGrivi": "showAddGirviPage"
+            "addgirvi": "showAddGirviPage"
         };
     }
 

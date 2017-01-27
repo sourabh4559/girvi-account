@@ -1,0 +1,22 @@
+<div>
+    <select id='fn-village-selector'>
+        {{#each villageList}}
+            <option value={{@key}}>{{name}}</option>
+        {{/each}}
+    </select>
+<div>
+<div>
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" name="name" />
+    </div>
+    <div>
+        <label for="amount">Amount:</label>
+        <input type="text" name="amount" />
+    </div>
+    <div>
+        <label for="startDate">Date:</label>
+        <input type="text" name="startDate" />
+    </div>
+    <button id="btn-add-girvi" type="button">Add</button>
+</div>
