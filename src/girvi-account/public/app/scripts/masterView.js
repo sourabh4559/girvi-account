@@ -15,12 +15,41 @@ class MasterView extends ViewBase {
         this.template = this.getTemplate(templates, "_masterPartial");
     }
 
-    // --------------- Girvi Selection View > Start ----------------------
-
     showGirviSelectionView() {
         this.fetchVillageList().
             then((villageList) => {
                 this.renderGirviSelectionView(villageList);
+            });
+    }
+
+    renderGirviSelectionView(villageList) {
+        var girviSelectionView = new GirviSelectionView({
+            villageList
+        });
+        this.setView(".fn-master-content-container", girviSelectionView).render();
+    }
+
+    showGirviDetailView(girviKey) {
+        this.fetchGirviDetailData(girviKey)
+            .then((girviData) => {
+                this.renderGirviDetailView(girviData);
+            });
+    }
+
+    renderGirviDetailView(girviData) {
+        var girviDetailView = new GirviDetailView({
+            girviData
+        });
+        this.setView(".fn-master-content-container", girviDetailView).render();
+    }
+
+    showAddGirviView() {
+        this.fetchVillageList().
+            then((villageList) => {
+                var addGirviView = new AddGirviView({
+                    villageList
+                });
+                this.setView(".fn-master-content-container", addGirviView).render();
             });
     }
 
@@ -35,25 +64,6 @@ class MasterView extends ViewBase {
         return new Promise(handler);
     }
 
-    renderGirviSelectionView(villageList) {
-        var girviSelectionView = new GirviSelectionView({
-            villageList
-        });
-        this.setView(".fn-master-content-container", girviSelectionView).render();
-    }
-
-    // --------------- Girvi Selection View > End ---------------------------
-
-
-    // --------------- Girvi Detail View > Start ----------------------------
-
-    showGirviDetailView(girviKey) {
-        this.fetchGirviDetailData(girviKey)
-            .then((girviData) => {
-                this.renderGirviDetailView(girviData);
-            });
-    }
-
     fetchGirviDetailData(girviKey) {
         const rootRef = firebase.database().ref();
         const girvisRef = rootRef.child("girvis");
@@ -64,24 +74,6 @@ class MasterView extends ViewBase {
         };
         return new Promise(handler);
     }
-
-    renderGirviDetailView(girviData) {
-        var girviDetailView = new GirviDetailView({
-            girviData
-        });
-        this.setView(".fn-master-content-container", girviDetailView).render();
-    }
-
-    // --------------- Girvi Detial View > End ------------------------------ 
-
-    // --------------- Add Girvi View > Start -------------------------------
-
-    showAddGirviView() {
-        var addGirviView = new AddGirviView();
-        this.setView(".fn-master-content-conatiner", addGirviView).render();
-    }
-
-    // --------------- Add Girvi View > End ---------------------------------
 
 }
 
