@@ -12,7 +12,10 @@ class AddGirviView extends ViewBase {
     events() {
         return {
             "click #btn-add-girvi": "onAddGirviBtnClick",
-            "click #secondary-btn": "onBackClick"
+            "click #secondary-btn": "onBackClick",
+            "keyup #search-village-textbox": "showVillageList",
+            "keypress #search-village-textbox": "showVillageList",
+            "click .fn-village": "onVillageSelection"
         };
     }
 
@@ -78,6 +81,46 @@ class AddGirviView extends ViewBase {
     }
 
     // ------------------ Event Handlers > End ------------------------
+
+    onVillageSelection(event) {
+        var selectedVillageKey = $(event.target).attr("value");
+        this.$("#search-village-textbox").val($(event.target).attr("data-village-name"));
+        this.$('#fn-village-selector').val(selectedVillageKey);
+        this.hideVillageList();
+        this.showAddGirviSelection();
+    }
+
+    showAddGirviSelection() {
+        this.$(".new-girvi-info-section").showElement();
+    }
+    hideAddGirviSelection() {
+        this.$(".new-girvi-info-section").hideElement();
+    }
+
+    showVillageList() {
+        var villageName = this.$("#search-village-textbox").val().trim().toLowerCase();
+        this.hideAddGirviSelection();
+        if (villageName) {
+            this.showMatchedVillages(villageName);
+        } else {
+            this.hideVillageList();
+        }
+    }
+
+    showMatchedVillages(villageName) {
+        var villageList = this.$(".fn-villages-datalist-container .village-item");
+        this.hideVillageList();
+        this.$(".fn-villages-datalist-container").addClass('show-villages-datalist-container').showElement();
+        villageList.each((item) => {
+            if (this.$(villageList[item]).find('.fn-village').data('village-name').toLowerCase().indexOf(villageName) > -1) {
+                this.$(villageList[item]).showElement();
+            }
+        });
+    }
+
+    hideVillageList() {
+        this.$(".fn-villages-datalist-container .village-item").hideElement();
+    }
 
 }
 

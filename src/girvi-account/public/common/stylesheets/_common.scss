@@ -12,6 +12,17 @@
     padding-right: 0px;
 }
 
+.info-input-box {
+    height: 25px;
+    line-height: 25px;
+    border-radius: 5px;
+    padding-left: 5px;
+    min-width: 50%;
+    border: 1px solid gray;
+    text-decoration: none;
+    outline-style: none;
+}
+
 
 /*******Common classes Ends*******/
 
@@ -214,3 +225,18 @@ header {
 
 
 /*******line separator ends *******/
+
+
+/*******Button Classes Starts********/
+
+.submit-button {
+    height: 30px;
+    line-height: normal;
+    width: 100px;
+    border-radius: 5px;
+    border-style: none;
+    background: lightgreen;
+}
+
+
+/*******Button Classes ends********/

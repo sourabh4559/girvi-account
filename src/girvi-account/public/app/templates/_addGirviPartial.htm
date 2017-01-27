@@ -1,23 +1,52 @@
 <div class="space-container"></div>
 <div>
-    <select id='fn-village-selector'>
-        {{#each villageList}}
-            <option value={{@key}}>{{name}}</option>
-        {{/each}}
-    </select>
-    <div>
-        <div>
-            <div>
-                <label for="name">Name:</label>
-                <input type="text" name="name" />
+    <div class="line-separator">
+        <div class="line-separator-content"></div>
+    </div>
+    <div class="left-spacing right-spacing sub-section village-selector-container">
+        <div id='fn-village-selector' class="fn-villages-container search-box-container">
+            <input id="search-village-textbox" placeholder="{{searchVillageWatermark}}" class="search-box col-xs-12 no-padding" />
+        </div>
+        <div id="villages-datalist" class="villages-datalist-container fn-villages-datalist-container col-xs-12 no-padding sub-text hide">
+            {{#each villageList}}
+            <div class="village-item hide">
+                <div class="fn-village search-village-item" data-village-name="{{name}}" value={{@key}}>{{name}}</div>
+                <div class="line-separator">
+                    <div class="line-separator-content"></div>
+                </div>
             </div>
-            <div>
-                <label for="amount">Amount:</label>
-                <input type="text" name="amount" />
+            {{/each}}
+        </div>
+    </div>
+    <div class="line-separator">
+        <div class="line-separator-content"></div>
+    </div>
+    <div class="component-space-container"></div>
+    <div class="new-girvi-info-section hide">
+        <div class="col-xs-12 name-section left-spacing right-spacing normal-row-item text-center">
+            Add Girvi Info
+        </div>
+        <div class="line-separator">
+            <div class="line-separator-content"></div>
+        </div>
+        <div class="new-girvi-info sub-section">
+            <div class="col-xs-12 name-section left-spacing right-spacing normal-row-item">
+                <div class="col-xs-6 no-padding text-right right-spacing">Name :</div>
+                <div class="col-xs-6 no-padding"><input type="text" class="info-input-box" name="name" /></div>
             </div>
-            <div>
-                <label for="startDate">Date:</label>
-                <input type="text" name="startDate" />
+            <div class="col-xs-12 amount-section left-spacing right-spacing normal-row-item">
+                <div class="col-xs-6 no-padding text-right right-spacing">Amount :</div>
+                <div class="col-xs-6 no-padding"><input type="text" class="info-input-box" name="amount" /></div>
             </div>
-            <button id="btn-add-girvi" type="button">Add</button>
+            <div class="col-xs-12 date-section left-spacing right-spacing normal-row-item">
+                <div class="col-xs-6 no-padding text-right right-spacing">Date :</div>
+                <div class="col-xs-6 no-padding"><input type="text" class="info-input-box" name="startDate" /></div>
+            </div>
+        </div>
+        <div class="line-separator">
+            <div class="line-separator-content"></div>
+        </div>
+        <div class="row-space-container"></div>
+        <div class="col-xs-12 name-section left-spacing right-spacing normal-row-item text-center">
+            <button id="btn-add-girvi" type="button" class="submit-button">Add</button>
         </div>
