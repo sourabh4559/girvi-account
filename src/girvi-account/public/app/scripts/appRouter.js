@@ -8,7 +8,8 @@ class AppRouter extends Backbone.Router {
         return {
             "": "index",
             "girvi/:girviKey": "showGirviDetailPage",
-            "addgirvi": "showAddGirviPage"
+            "addgirvi": "showAddGirviPage",
+            "addvillage": "showAddVillagePage"
         };
     }
 
@@ -38,6 +39,12 @@ class AppRouter extends Backbone.Router {
     showAddGirviPage() {
         this.renderMasterView().then(function (masterView) {
             masterView.showAddGirviView();
+        });
+    }
+
+    showAddVillagePage() {
+        this.renderMasterView().then(function (masterView) {
+            masterView.showAddVillageView();
         });
     }
 

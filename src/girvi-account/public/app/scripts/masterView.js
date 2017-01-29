@@ -3,6 +3,7 @@ import templates from '../../templates/app-templates';
 import GirviSelectionView from './girviSelectionView';
 import GirviDetailView from './girviDetailView';
 import AddGirviView from './addGirviView';
+import AddVillageView from './addVillageView';
 import * as firebase from 'firebase';
 
 class MasterView extends ViewBase {
@@ -51,6 +52,11 @@ class MasterView extends ViewBase {
                 });
                 this.setView(".fn-master-content-container", addGirviView).render();
             });
+    }
+
+    showAddVillageView() {
+        var addVillageView = new AddVillageView();
+        this.setView(".fn-master-content-container", addVillageView).render();
     }
 
     fetchVillageList() {
