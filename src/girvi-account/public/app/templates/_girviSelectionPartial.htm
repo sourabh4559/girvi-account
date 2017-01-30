@@ -4,19 +4,12 @@
         <div class="line-separator-content"></div>
     </div>
     <div class="left-spacing right-spacing sub-section village-selector-container">
-        <div id='fn-village-selector' class="fn-villages-container search-box-container">
-            <input id="search-village-textbox" placeholder="{{searchVillageWatermark}}" class="search-box col-xs-12 no-padding" />
-        </div>
-        <div id="villages-datalist" class="villages-datalist-container fn-villages-datalist-container col-xs-12 no-padding sub-text hide">
+        <select id="fn-village-selector" class="select-village">
+            <option disabled selected value style="display:none"> -- Select a Village -- </option>
             {{#each villageList}}
-            <div class="village-item hide">
-                <div class="fn-village search-village-item" data-village-name="{{name}}" value={{@key}}>{{name}}</div>
-                <div class="line-separator">
-                    <div class="line-separator-content"></div>
-                </div>
-            </div>
+                <option value={{@key}}>{{name}}</option>
             {{/each}}
-        </div>
+        </select>
     </div>
     <div class="line-separator">
         <div class="line-separator-content"></div>

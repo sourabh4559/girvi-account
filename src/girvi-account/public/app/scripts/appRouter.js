@@ -1,6 +1,7 @@
 import Backbone from 'backbone';
 import PageLayout from './pageLayout';
 import MasterView from './masterView';
+import Enum from '../common/enum';
 
 class AppRouter extends Backbone.Router {
 
@@ -25,32 +26,32 @@ class AppRouter extends Backbone.Router {
     }
 
     showGirviSelectionView() {
-        this.renderMasterView().then(function(masterView) {
+        this.renderMasterView(Enum.animateDirection.leftToRight).then(function(masterView) {
             masterView.showGirviSelectionView();
         });
     }
 
     showGirviDetailPage(girviKey) {
-        this.renderMasterView().then(function(masterView) {
+        this.renderMasterView(Enum.animateDirection.rightToLeft).then(function(masterView) {
             masterView.showGirviDetailView(girviKey);
         });
     }
 
     showAddGirviPage() {
-        this.renderMasterView().then(function (masterView) {
+        this.renderMasterView(Enum.animateDirection.rightToLeft).then(function (masterView) {
             masterView.showAddGirviView();
         });
     }
 
     showAddVillagePage() {
-        this.renderMasterView().then(function (masterView) {
+        this.renderMasterView(Enum.animateDirection.rightToLeft).then(function (masterView) {
             masterView.showAddVillageView();
         });
     }
 
-    renderMasterView() {
+    renderMasterView(animateDirection) {
         var masterView = new MasterView();
-        return this.pageLayout.renderView(masterView);
+        return this.pageLayout.renderView(masterView, animateDirection);
     }
 }
 

@@ -5,7 +5,7 @@ import utils from '../common/utils';
 class GirviListItemView extends ViewBase {
 
     className() {
-        return ".fn-girvi-list-item";
+        return "girvi-list-item";
     }
 
     events() {
@@ -28,7 +28,7 @@ class GirviListItemView extends ViewBase {
     // -------------------- Event Handlers > Start ----------------------
 
     onItemClick(event) {
-        var girviKey = this.$('.girvi-item').attr('data-key');
+        var girviKey = this.$('.fn-girvi-info').attr('data-key');
         Backbone.history.navigate(utils.createUrl("/girvi", girviKey), {trigger: true});
     }
 

@@ -60,3 +60,32 @@ body, input, button, select, option, textarea {
     height: 100%;
 }
 
+.select-village {
+    height:30px;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.girvi-list {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    .girvi-list-item {
+        border:1px solid #AAAAAA;
+        border-radius: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-bottom: 5px;
+    }
+}
+
+.hide {
+    display: none;
+}
+
+
+

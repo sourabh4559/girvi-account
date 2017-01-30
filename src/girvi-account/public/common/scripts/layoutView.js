@@ -4,6 +4,7 @@ import ViewBase from './viewBase';
 import navigationHistoryManager from './navigationHistoryManager';
 import utils from './utils';
 import Enum from './enum';
+import {common} from './constant.js';
 
 class LayoutView extends ViewBase {
 
@@ -62,6 +63,9 @@ class LayoutView extends ViewBase {
             self.adjustContentholder();
             //set the new screen on top of the window.
             utils.scrollWithoutAnimation(0);
+            if (view.afterTransition) {
+                view.afterTransition();
+            }
             self.renderingInProgress = false;
         };
 
@@ -69,7 +73,7 @@ class LayoutView extends ViewBase {
             if (animateDirection) {
                 $(firstContentHolder).transition($.extend({
                     'margin-left': marginLeftValue
-                }, App.Constant.common.transitionAddOnProperties), App.Constant.common.pageTransitionSpeed, function() {
+                }, common.transitionAddOnProperties), common.pageTransitionSpeed, function() {
                     _.defer(self.animationCompleteCallback);
                     if (view.afterTransition) {
                         view.afterTransition();

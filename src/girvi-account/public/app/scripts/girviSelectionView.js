@@ -13,10 +13,8 @@ class GirviSelectionView extends ViewBase {
 
     events() {
         return {
-            "click .fn-village": "onVillageSelection",
-            "keyup #search-village-textbox": "showVillageList",
-            "keypress #search-village-textbox": "showVillageList",
-            "click #primary-btn": "addGirvi"
+            "change #fn-village-selector": "onVillageSelectionChange",
+            "click #primary-btn": "onAddBtnClick",  
         };
     }
 
@@ -31,21 +29,20 @@ class GirviSelectionView extends ViewBase {
             headerTitle: "Girvi List",
             rightLinkText: 'Add',
             villageList: this.villageList,
-            searchVillageWatermark: "Search Girvi Village"
         };
-    }
-
-    afterRender() {
-        this.renderGirviListView();
     }
 
     // -------------- Event Handlers > Start --------------------------
 
-    onVillageSelection(event) {
-        var selectedVillageKey = $(event.target).attr("value");
-        this.$("#search-village-textbox").val($(event.target).attr("data-village-name"));
-        this.hideVillageList();
-        this.updateGirviListForVillage(selectedVillageKey);
+    onVillageSelectionChange(event) {
+        var selectedVillageKey = $(event.target).val();
+        this.showGirviListForVillage(selectedVillageKey);
+    }
+
+    onAddBtnClick() {
+        Backbone.history.navigate(utils.createUrl("/addgirvi"), {
+            trigger: true
+        });
     }
 
     // -------------- Event Handlers > End ----------------------------
@@ -68,43 +65,17 @@ class GirviSelectionView extends ViewBase {
         this.setView('.fn-girvi-list-container', girviListView).render();
     }
 
-    updateGirviListForVillage(villageKey) {
+    showGirviListForVillage(villageKey) {
         this.fetchVillageGirviList(villageKey)
             .then((villageGirviList) => {
                 let girviListView = this.getView('.fn-girvi-list-container');
-                girviListView.girviList = villageGirviList;
-                girviListView.render();
+                if (!girviListView) {
+                    this.renderGirviListView(villageGirviList);
+                } else {
+                    girviListView.girviList = villageGirviList;
+                    girviListView.render();
+                }
             });
-    }
-
-    showVillageList() {
-        var villageName = this.$("#search-village-textbox").val().trim().toLowerCase();
-        if (villageName) {
-            this.showMatchedVillages(villageName);
-        } else {
-            this.hideVillageList();
-        }
-    }
-
-    showMatchedVillages(villageName) {
-        var villageList = this.$(".fn-villages-datalist-container .village-item");
-        this.hideVillageList();
-        this.$(".fn-villages-datalist-container").addClass('show-villages-datalist-container').showElement();
-        villageList.each((item) => {
-            if (this.$(villageList[item]).find('.fn-village').data('village-name').toLowerCase().indexOf(villageName) > -1) {
-                this.$(villageList[item]).showElement();
-            }
-        });
-    }
-
-    hideVillageList() {
-        this.$(".fn-villages-datalist-container .village-item").hideElement();
-    }
-
-    addGirvi() {
-        Backbone.history.navigate(utils.createUrl("/addgirvi"), {
-            trigger: true
-        });
     }
 
 }
