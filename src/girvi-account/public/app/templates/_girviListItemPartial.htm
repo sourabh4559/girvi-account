@@ -1,6 +1,23 @@
-<div class='fn-girvi-info row normal-row-item' data-key="{{item.girviKey}}" data-girvi-name="{{item.name}}">
-    <div class="col-xs-4">{{item.name}}</div>
-    <div class="col-xs-3"></div>
-    <div class="col-xs-3">{{item.amount}}</div>
-    <div class="col-xs-2 text-right">></div>
+<div class='fn-girvi-info' data-key="{{item.girviKey}}" data-girvi-name="{{item.name}}">
+    <div class="row">
+        <div class="col-xs-3 client-info">
+            <div><span>Name : </span><span><b>{{item.name}}</b></span></div>
+            {{#if item.childOf}}
+            <div><span>Child Of : </span><span>{{item.childOf}}</span></div>
+            {{/if}}
+            {{#if item.careOf}}
+            <div><span>Care Of : </span><span>{{item.careOf}}</span></div>
+            {{/if}}
+            {{#if item.mobileNo}}
+            <div><span>Mobile Number : </span><span>{{item.mobileNo}}</span></div>
+            {{/if}}
+        </div>
+        <div class="col-xs-3 girvi-info">
+            <div><span>Start Date : </span><span>{{item.startDate}}</span></div>
+            <div><span>Amount : </span><span>{{item.amount}}</span></div>
+        </div>
+        <div class="col-xs-6 girvi-items-info">
+            <div><span>Items : </span><span>{{item.items}}</span></div>
+        </div>
+    </div>
 </div>
