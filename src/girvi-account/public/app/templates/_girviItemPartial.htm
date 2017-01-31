@@ -1,5 +1,29 @@
 <div class="row normal-row-item">
-    <div class="col-xs-3 col-xs-offset-1">
+    <div class="col-xs-2 item-name">
+        <span>Name : </span>
         <span>{{item.name}}</span>
+        <input type="text" class="info-input-box hide" name="name" {{#if item.status}}value={{item.status}}{{/if}} />
+    </div>
+    <div class="col-xs-2 item-weight">
+        <span>Weight : </span>
+        <span>{{item.weight}}</span>
+        <input type="text" class="info-input-box hide" name="weight" {{#if item.status}}value={{item.status}}{{/if}} />
+    </div>
+    <div class="col-xs-6 item-notes">
+        <span>Notes : </span>
+        <span>{{item.notes}}</span>
+        <input type="text" class="info-input-box hide" name="notes" {{#if item.status}}value={{item.status}}{{/if}} />
+    </div>
+    <div class="col-xs-1">
+        <div class="edit-item-options fr">
+            <a href="javascript:void(0)" class="fn-lnk-edit-item lnk-edit">Edit</a>
+        </div>
+        <div class="save-item-options save-cancel-lnks fr hide">
+            <a href="javascript:void(0)" class="fn-lnk-cancel-item-changes lnk-cancel">Cancel</a>
+            <a href="javascript:void(0)" class="fn-lnk-save-item-changes lnk-save">Save</a>
+        </div>
+    </div>
+    <div class="col-xs-1 pull-right">
+        <a href="javascript:void(0)" class="fn-lnk-remove-item right-spacing">Remove</a>
     </div>
 </div>

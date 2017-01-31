@@ -9,7 +9,9 @@ class GirviItemView extends ViewBase {
 
     events() {
         return {
-
+            "click .fn-lnk-edit-item": "onEditLnkClick",
+            "click .fn-lnk-cancel-item-changes": "onCancelLnkClick",
+            "click .fn-lnk-save-item-changes": "onSaveLnkClick"
         };
     }
 
@@ -24,15 +26,51 @@ class GirviItemView extends ViewBase {
         };
     }
 
-    afterRender() {
-        
-    }
-
     // ------------------------ Event Handlers > Start ------------------------
 
+    onEditLnkClick() {
+        this.hideEditItemOptions();
+        this.showSaveCancelItemOptions();
+        this.showItemInEditMode();
+    }
 
+    onCancelLnkClick() {
+        this.hideSaveCancelItemOptions();
+        this.showEditItemOptions();
+        this.showItemInReadOnlyMode();
+    }
+
+    onSaveLnkClick() {
+        this.hideSaveCancelItemOptions();
+        this.showEditItemOptions();
+        this.showItemInReadOnlyMode();
+    }
 
     // ------------------------ Event Handlers > End --------------------------
+
+    showEditItemOptions() {
+        this.$('.edit-item-options').removeClass('hide');
+    }
+    
+    hideEditItemOptions() {
+        this.$('.edit-item-options').addClass('hide');
+    }
+
+    showSaveCancelItemOptions() {
+        this.$('.save-item-options').removeClass('hide');
+    }
+
+    hideSaveCancelItemOptions() {
+        this.$('.save-item-options').addClass('hide');
+    }
+
+    showItemInReadOnlyMode() {
+
+    }
+
+    showItemInEditMode() {
+
+    }
 
 }
 
