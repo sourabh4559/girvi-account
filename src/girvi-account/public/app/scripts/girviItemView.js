@@ -65,11 +65,13 @@ class GirviItemView extends ViewBase {
     }
 
     showItemInReadOnlyMode() {
-
+        this.$('.readonly-field').removeClass('hide');
+        this.$('.editable-field').addClass('hide');
     }
 
     showItemInEditMode() {
-
+        this.$('.readonly-field').addClass('hide');
+        this.$('.editable-field').removeClass('hide');
     }
 
 }

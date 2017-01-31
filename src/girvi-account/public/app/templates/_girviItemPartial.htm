@@ -1,18 +1,18 @@
 <div class="row normal-row-item">
     <div class="col-xs-2 item-name">
         <span>Name : </span>
-        <span>{{item.name}}</span>
-        <input type="text" class="info-input-box hide" name="name" {{#if item.status}}value={{item.status}}{{/if}} />
+        <span class="readonly-field">{{item.name}}</span>
+        <input type="text" class="editable-field info-input-box hide" name="name" {{#if item.name}}value={{item.name}}{{/if}} />
     </div>
     <div class="col-xs-2 item-weight">
         <span>Weight : </span>
-        <span>{{item.weight}}</span>
-        <input type="text" class="info-input-box hide" name="weight" {{#if item.status}}value={{item.status}}{{/if}} />
+        <span class="readonly-field">{{item.weight}}</span>
+        <input type="text" class="editable-field info-input-box hide" name="weight" {{#if item.weight}}value={{item.weight}}{{/if}} />
     </div>
-    <div class="col-xs-6 item-notes">
+    <div class="col-xs-5 item-notes">
         <span>Notes : </span>
-        <span>{{item.notes}}</span>
-        <input type="text" class="info-input-box hide" name="notes" {{#if item.status}}value={{item.status}}{{/if}} />
+        <span class="readonly-field">{{item.notes}}</span>
+        <input type="text" class="editable-field info-input-box hide" name="notes" {{#if item.notes}}value={{item.notes}}{{/if}} />
     </div>
     <div class="col-xs-1">
         <div class="edit-item-options fr">
@@ -23,7 +23,9 @@
             <a href="javascript:void(0)" class="fn-lnk-save-item-changes lnk-save">Save</a>
         </div>
     </div>
-    <div class="col-xs-1 pull-right">
-        <a href="javascript:void(0)" class="fn-lnk-remove-item right-spacing">Remove</a>
+    <div class="col-xs-2 pull-right">
+        <div class="right-spacing">
+            <a href="javascript:void(0)" class="fn-lnk-remove-item fr">Remove</a>
+        </div>
     </div>
 </div>
