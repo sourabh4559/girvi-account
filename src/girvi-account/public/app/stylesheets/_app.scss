@@ -87,5 +87,29 @@ body, input, button, select, option, textarea {
     display: none;
 }
 
+.client-info-fields {
+    float: left;
+    margin-right: 15px;
+}
+
+.girvi-info-fields {
+    float: left;
+    margin-right: 15px;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.save-cancel-lnks {
+    .lnk-cancel {
+        margin-right: 15px;
+    }
+}
+
 
 

@@ -1,48 +1,90 @@
 <div class="space-container"></div>
 <div class="girvi-detail">
-    <div class="col-xs-12 name-section left-spacing right-spacing normal-row-item text-center">
-        Client Personal Info
+    <div class="col-xs-12 name-section left-spacing right-spacing normal-row-item">
+        <span>Client Info</span>
+        <div class="edit-client-info-options fr">
+            <a href="javascript:void(0)" class="fn-lnk-edit-client-info">Edit</a>
+        </div>
+        <div class="save-client-info-options save-cancel-lnks fr hide">
+            <a href="javascript:void(0)" class="fn-lnk-cancel-clientinfo-changes lnk-cancel">Cancel</a>
+            <a href="javascript:void(0)" class="fn-lnk-save-clientinfo-changes lnk-save">Save</a>
+        </div>
     </div>
     <div class="line-separator">
         <div class="line-separator-content"></div>
     </div>
-    <div class="client-info sub-section">
-        <div class="col-xs-12 name-section left-spacing right-spacing normal-row-item">
-            <div class="col-xs-6 no-padding text-right right-spacing">Name :</div>
-            <div class="col-xs-6 no-padding">{{item.name}}</div>
-        </div>
-        <div class="col-xs-12 father-name-section left-spacing right-spacing normal-row-item">
-            <div class="col-xs-6 no-padding text-right right-spacing">FatherName :</div>
-            <div class="col-xs-6 no-padding">{{item.fatherName}}</div>
-        </div>
-        <div class="col-xs-12 gender-section left-spacing right-spacing normal-row-item">
-            <div class="col-xs-6 no-padding text-right right-spacing">Sex :</div>
-            <div class="col-xs-6 no-padding">{{item.sex}}</div>
+    <div class="sub-section">
+        <div class="row normal-row-item">
+            <div class="col-xs-12 col-xs-offset-1">
+                <div class="client-info-fields">
+                    <div>Name : </div>    
+                    <div>Child Of : </div>
+                    <div>Care Of : </div>
+                    <div>Mobile No : </div>
+                </div>
+                <div class="readonly-client-info">
+                    <div>{{item.name}}</div>
+                    <div>{{item.childOf}}</div>
+                    <div>{{item.careOf}}</div>
+                    <div>{{item.mobileNo}}</div>
+                </div>
+                <div class="editable-client-info hide">
+                    <input type="text" class="info-input-box" name="name" {{#if item.name}}value={{item.name}}{{/if}} />
+                    <input type="text" class="info-input-box" name="childOf" {{#if item.childOf}}value={{item.childOf}}{{/if}} />
+                    <input type="text" class="info-input-box" name="careOf" {{#if item.careOf}}value={{item.careOf}}{{/if}} />
+                    <input type="text" class="info-input-box" name="mobileNo" {{#if item.mobileNo}}value={{item.mobileNo}}{{/if}} />
+                </div>
+            </div>
         </div>
     </div>
     <div class="line-separator">
         <div class="line-separator-content"></div>
     </div>
     <div class="component-space-container"></div>
-    <div class="col-xs-12 name-section left-spacing right-spacing normal-row-item text-center">
-        Client Girvi Info
-    </div>
-    <div class="line-separator">
-        <div class="line-separator-content"></div>
-    </div>
-    <div class="girvi-info sub-section">
-        <div class="col-xs-12 amount-section left-spacing right-spacing normal-row-item">
-            <div class="col-xs-6 no-padding text-right right-spacing">Amount :</div>
-            <div class="col-xs-6 no-padding">{{item.amount}}</div>
+    <div class="col-xs-12 name-section left-spacing right-spacing normal-row-item">
+        Girvi Info
+        <div class="edit-girvi-info-options fr">
+            <a href="javascript:void(0)" class="fn-lnk-edit-girvi-info">Edit</a>
         </div>
-        <div class="col-xs-12 date-section left-spacing right-spacing normal-row-item">
-            <div class="col-xs-6 no-padding text-right right-spacing">Start Date :</div>
-            <div class="col-xs-6 no-padding">{{item.startDate}}</div>
+        <div class="save-girvi-info-options save-cancel-lnks fr hide">
+            <a href="javascript:void(0)" class="fn-lnk-cancel-girviinfo-changes lnk-cancel">Cancel</a>
+            <a href="javascript:void(0)" class="fn-lnk-save-girviinfo-changes lnk-save">Save</a>
         </div>
     </div>
     <div class="line-separator">
         <div class="line-separator-content"></div>
     </div>
+    <div class="sub-section">
+        <div class="row normal-row-item">
+            <div class="col-xs-12 col-xs-offset-1">
+                <div class="girvi-info-fields">
+                    <div>Status : </div>    
+                    <div>Amount : </div>
+                    <div>Start Date : </div>
+                    <div>End Date : </div>
+                </div>
+                <div class="readonly-girvi-info">
+                    <div>{{item.status}}</div>
+                    <div>{{item.amount}}</div>
+                    <div>{{item.startDate}}</div>
+                    <div>{{item.endDate}}</div>
+                </div>
+                <div class="editable-girvi-info hide">
+                    <input type="text" class="info-input-box" name="name" {{#if item.status}}value={{item.status}}{{/if}} />
+                    <input type="text" class="info-input-box" name="childOf" {{#if item.amount}}value={{item.amount}}{{/if}} />
+                    <input type="text" class="info-input-box" name="careOf" {{#if item.startDate}}value={{item.startDate}}{{/if}} />
+                    <input type="text" class="info-input-box" name="mobileNo" {{#if item.endDate}}value={{item.endDate}}{{/if}} />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="line-separator">
+        <div class="line-separator-content"></div>
+    </div>
+    <div class="component-space-container"></div>
+    <div class='fn-items-container'></div>
+    <div class="component-space-container"></div>
+    <div class='fn-containerInfo-container'></div>
+    <div class="component-space-container"></div>
+    <div class='fn-activityInfo-container'></div>
 </div>
-<div class='fn-containerInfo-container'></div>
-<div class='fn-activityInfo-container'></div>
